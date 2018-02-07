@@ -10,7 +10,49 @@
   </head>
   <body>
     <article id="app">
-      
+    
     </article>
+    <a href="" class="api a">a</a>
+    <a href="" class="api b">b</a>
+    <script type="text/javascript">
+    // 注册路由
+    document.querySelectorAll('.api').forEach(item=>{
+        item.addEventListener('click',(e) => {
+          e.preventDefault();
+          let link = item.textContent;
+          window.history.pushState({name:'api'},link,link);
+        }, false)
+    });
+    // 监听路由
+    window.addEventListener('popstate',(e) => {
+      console.log({
+        location:location.href,
+        state:e.state
+      });
+    }, false);
+
+    </script>
+
+    <h3>hash</h3>
+    <a href="" class="hash a">a</a>
+    <a href="" class="hash b">b</a>
+    <script type="text/javascript">
+       // 注册路由
+        document.querySelectorAll('.hash').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            let link = item.textContent;
+            location.hash = link;
+          }, false)
+        });
+        // 监听路由
+        window.addEventListener('hashchange', (e) => {
+          console.log({
+            location: location.href,
+            hash: location.hash
+          });
+        }, false);
+      
+    </script>
   </body>
 </html>

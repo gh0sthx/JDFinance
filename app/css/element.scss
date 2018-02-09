@@ -1,0 +1,20 @@
+@import "./layout.scss";
+
+// 按钮
+@mixin btn($size:14px,$color:#fff,$bgcolor:#f04752,$padding:5px,$radius:5px){
+    padding: $padding;
+    background-color: $bgcolor;
+    border-radius: $radius;
+    border: 1px solid $bgcolor;
+    font-size: $size;
+    color: $color;
+    text-align: center;
+    line-height: 1;
+    display: inline-block;
+}
+
+// 列表
+@mixin list($direction:column){
+    @include flex($direction);
+    
+}
